@@ -104,7 +104,7 @@
 }
 font-face {
   font-family: "Poppins";
-  src: url("@/Fonts/Poppins-Thin.ttf") format("truetype");
+  src: url("../Fonts/Poppins-Thin.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }

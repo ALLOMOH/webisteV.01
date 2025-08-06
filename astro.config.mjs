@@ -11,7 +11,7 @@ export default defineConfig({ // Ajoutez cette ligne
   vite:{
     define:{
       'ssr':{
-          noExternal: ['@react-email/components', 'react-email']
+          noExternal: ['@react-email/components', 'react-email','lucide-react']
       },
     },
     plugins:[

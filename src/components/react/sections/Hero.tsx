@@ -1,4 +1,4 @@
-import { ChevronRight, Cloud, Code, Container, Loader, Network, Settings, Shield } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import GlowButton from '../UI/components/GlowButton';
 import NetworkBackground from '../UI/Animation/NetworkBackground';
 import FloatingCard from '../UI/components/FloatingCard';
