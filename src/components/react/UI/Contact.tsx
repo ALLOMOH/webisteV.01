@@ -20,7 +20,6 @@ import {motion}  from 'framer-motion';
 
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { actions } from "astro:actions";
 import DecryptedText from "./Text/DecryptedText";
 import ShinyText from "./Text/ShinyText";
 import LightCommunicationBackground from "./Animation/LightCommunicationBackground";
@@ -313,7 +312,6 @@ export default function Contact() {
                     <form
                       onSubmit={handleSubmit}
                       className="space-y-4 md:space-y-6"
-                      method="POST" action={actions.contact}
                     >
                       {error && (
                         <Alert variant="destructive">
