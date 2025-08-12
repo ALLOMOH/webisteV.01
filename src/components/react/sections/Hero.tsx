@@ -4,7 +4,6 @@ import NetworkBackground from '../UI/Animation/NetworkBackground';
 import FloatingCard from '../UI/components/FloatingCard';
 import DecryptedText from "../UI/Text/DecryptedText";
 import CountUp from "../UI/Text/CountUp";
-import ShinyText from "../UI/Text/ShinyText";
 import { motion } from 'framer-motion';
 
 const Hero = () => {
@@ -29,7 +28,7 @@ const Hero = () => {
               </span>
             </h1>
             <p className="text-xs md:text-xl line-clamp-5 text-gray-300  leading-relaxed">
-              <ShinyText textAlign="left" duration={.1}  splitType={'words'} text={`Boostez la performance de votre entreprise grâce à des solutions réseau sur mesure.Nous accompagnons les PME et grandes structures dans l’installation, la gestion et la sécurisation de leurs infrastructures informatiques.
+              <DecryptedText speed={70}   animateOn='view'  text={`Boostez la performance de votre entreprise grâce à des solutions réseau sur mesure.Nous accompagnons les PME et grandes structures dans l’installation, la gestion et la sécurisation de leurs infrastructures informatiques.
                 `}
                  />
             </p>

@@ -4,7 +4,7 @@ import "@radix-ui/themes/styles.css";
 import Header from "@/components/react/UI/Header";
 import Footer from "@/components/react/UI/Footer";
 import AnimatedNetworkBackground from "@/components/react/UI/Animation/AnimetedNetworkBackground";
-import TracingBeam from "@/components/uiAceternity/UI/components/TracingBeam";
+// import TracingBeam from "@/components/uiAceternity/UI/components/TracingBeam";
 
 
 export interface Props {
@@ -98,9 +98,9 @@ const {
       ctaButton={{ label: "Contactez-nous", href: "/contact" }}
     />
     <main class="snap-mandatory flex items-center flex-col justify-center" > 
-        <TracingBeam  client:only >
+        <!-- <TracingBeam  client:only > -->
           <slot transition:name="root" />
-        </TracingBeam>
+        <!-- </TracingBeam> -->
     </main>
     <Footer bgGradient="bg-transparent backdrop-blur-xs" client:load />
   </body>

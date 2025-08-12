@@ -21,7 +21,7 @@ import {motion}  from 'framer-motion';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import DecryptedText from "./Text/DecryptedText";
-import ShinyText from "./Text/ShinyText";
+import DecryptedText from "./Text/DecryptedText";
 import LightCommunicationBackground from "./Animation/LightCommunicationBackground";
 
 export default function Contact() {
@@ -215,7 +215,7 @@ export default function Contact() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                   >
-                      <ShinyText
+                      <DecryptedText
                         splitType="words"
                         text="Une question ? Un projet ? Parlons-en ! Notre équipe est là pour vous accompagner dans votre transformation numérique."
                       />

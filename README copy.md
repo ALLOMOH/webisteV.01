@@ -194,7 +194,7 @@ folders and files:
 │   │   │           ├── CountUp.tsx
 │   │   │           ├── DecryptedText.tsx
 │   │   │           ├── ScrollVelocity.tsx
-│   │   │           ├── ShinyText.tsx
+│   │   │           ├── DecryptedText.tsx
 │   │   │           └── StartBorder.tsx
 │   │   ├── ui
 │   │   │   ├── alert.tsx
