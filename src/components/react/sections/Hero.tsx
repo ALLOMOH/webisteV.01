@@ -28,7 +28,7 @@ const Hero = () => {
               </span>
             </h1>
             <p className="text-xs md:text-xl line-clamp-5 text-gray-300  leading-relaxed">
-              <DecryptedText speed={70}   animateOn='view'  text={`Boostez la performance de votre entreprise grâce à des solutions réseau sur mesure.Nous accompagnons les PME et grandes structures dans l’installation, la gestion et la sécurisation de leurs infrastructures informatiques.
+              <DecryptedText speed={100} useOriginalCharsOnly={true}   animateOn='view'  text={`Boostez la performance de votre entreprise grâce à des solutions réseau sur mesure.Nous accompagnons les PME et grandes structures dans l’installation, la gestion et la sécurisation de leurs infrastructures informatiques.
                 `}
                  />
             </p>

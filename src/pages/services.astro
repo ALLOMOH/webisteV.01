@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 
 import DecryptedText from "@/components/react/UI/Text/DecryptedText";
-import DecryptedText from "@/components/react/UI/Text/DecryptedText";
 import LightCommunicationBackground from "@/components/react/UI/Animation/LightCommunicationBackground";
 import ScrollReveal from "@/components/react/UI/Animation/ScrollReveal";
 import GlowButton from "@/components/react/UI/components/GlowButton";
@@ -149,7 +148,7 @@ const services = [
               class="text-xs md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
             >
               <DecryptedText
-                splitType="words"
+                speed={100} useOriginalCharsOnly={true}    animateOn='view' 
                 text="Des solutions complètes pour transformer et optimiser votre infrastructure informatique"
                 client:load
               />
@@ -183,8 +182,7 @@ const services = [
                         <div class="text-2xl lg:text-3xl">
                           <DecryptedText
                             text={service.title}
-                            animateOn="view"
-                            speed={10}
+                            speed={100} useOriginalCharsOnly={true}   animateOn='view' 
                           />
                         </div>
                       </div>

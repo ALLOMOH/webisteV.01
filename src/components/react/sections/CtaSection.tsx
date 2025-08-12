@@ -22,7 +22,7 @@ function CtaSection() {
             
             >
 
-        <img src={backgroundImage?.image} alt={backgroundImage?.title} className="w-full h-full absolute -z-40 object-center aspect-video drop-shadow-2xl drop-shadow-amber-500 grayscale-300 saturate-200 opacity-50  " />
+        <img src={backgroundImage?.image} alt={backgroundImage?.title} className="w-full  h-full absolute -z-40 object-center aspect-video drop-shadow-2xl drop-shadow-amber-500 grayscale-300 saturate-200 opacity-50 " />
         <div className="max-w-4xl mx-4 md:mx-auto  my-20  ">
           <div className="flex flex-col gap-2 md:gap-4 bg-gradient-to-br from-it4a-primary/30 to-it4a-secondary backdrop-blur-lg backdrop-grayscale-700  rounded-2xl p-2 md:p-12 border border-white/50">
             <TitleDescript className={``} title="Transformer votre infrastructure IT ?" descript={`Contactez nos experts dès aujourd'hui pour une consultation gratuite et découvrez comment nous pouvons optimiser vos systèmes.`}/>   

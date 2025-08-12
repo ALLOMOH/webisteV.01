@@ -17,7 +17,7 @@ import ScrollReveal from "@/components/react/UI/Animation/ScrollReveal";
 import CountUp from "@/components/react/UI/Text/CountUp";
 import LightCommunicationBackground from "@/components/react/UI/Animation/LightCommunicationBackground";
 import DecryptedText from "@/components/react/UI/Text/DecryptedText";
-import DecryptedText from "@/components/react/UI/Text/DecryptedText";
+
 import {ImgAbout} from "@/assets/assets";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import ChromaGrid, { type ChromaItem } from "@/components/react/UI/components/ChromaGrid";
@@ -33,25 +33,23 @@ import TransitionSVGSection from "@/components/react/UI/components/TransitionSVG
 const teamMembers: ChromaItem[] = [
     {
       image:Profile1,
-      title: "Jean-Claude Kouassi",
-      subtitle: "Directeur Technique",
+      title: " Marthe Django",
+      subtitle: "RH",
     },
     {
       image:Profile2,
-      title: "Aminata Traoré", 
-      subtitle: "Ingénieure Sécurité",
+      title: "Louis Koffi", 
+      subtitle: "PDG",
     },
     {
       image:Profile3,
-      title: "David Assamoi",
-      subtitle: "Chef de Projet",
+      title: "Prince ATOBBLA",
+      subtitle: "DG",
     },
     {
       image:Profile4,
-      title: "Alex Ange",
-      subtitle: "Full Stack Developer",
-      handle: "@alexrivera",
-      url: "https://github.com/",
+      title: "Janne Goly",
+      subtitle: "Ingenieur Informatique"
     }
   ];
 
@@ -133,7 +131,7 @@ const teamMembers: ChromaItem[] = [
                   client:only
                 >
                     <DecryptedText
-                      splitType="words"
+                      speed={100} useOriginalCharsOnly={true}   animateOn='view' 
                       text="Spécialisés dans les services réseaux et infrastructures IT, nous accompagnons les entreprises africaines vers l'excellence technologique."
                       client:load
                     />

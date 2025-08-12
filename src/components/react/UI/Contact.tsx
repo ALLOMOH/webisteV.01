@@ -215,8 +215,7 @@ export default function Contact() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                   >
                       <DecryptedText
-                          animateOn="view"
-                          speed={10}
+                        speed={100} useOriginalCharsOnly={true}  animateOn='view' 
                         text="Une question ? Un projet ? Parlons-en ! Notre équipe est là pour vous accompagner dans votre transformation numérique."
                       />
                   </motion.p>
