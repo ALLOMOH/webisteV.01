@@ -21,7 +21,6 @@ import {motion}  from 'framer-motion';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import DecryptedText from "./Text/DecryptedText";
-import DecryptedText from "./Text/DecryptedText";
 import LightCommunicationBackground from "./Animation/LightCommunicationBackground";
 
 export default function Contact() {
@@ -216,7 +215,8 @@ export default function Contact() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                   >
                       <DecryptedText
-                        splitType="words"
+                          animateOn="view"
+                          speed={10}
                         text="Une question ? Un projet ? Parlons-en ! Notre équipe est là pour vous accompagner dans votre transformation numérique."
                       />
                   </motion.p>
