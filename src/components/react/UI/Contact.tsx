@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import TitleDescription from "@/components/react/UI/components/TitleDescript";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import GlowButton from "@/components/react/UI/components/GlowButton";
 
@@ -10,13 +9,10 @@ import {
   Clock,
   Send,
   CheckCircle,
-  MessageSquare,
-  Users,
-  BadgeHelp,
 } from "lucide-react";
 
 
-import {motion}  from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -30,6 +26,8 @@ export default function Contact() {
     email: "",
     message: "",
   });
+
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -59,9 +57,6 @@ export default function Contact() {
         throw new Error("Veuillez saisir une adresse email valide");
       }
 
-      console.log('Sending request to:', '/api/resend');
-      console.log('Form data:', formData);
-
       // Appel à l'API Astro
       const response = await fetch('/api/resend', {
         method: 'POST',
@@ -75,9 +70,6 @@ export default function Contact() {
         })
       });
 
-      console.log('Response status:', response.status);
-      console.log('Response headers:', response.headers.get('content-type'));
-
       // Vérifier si la réponse est du JSON
       const contentType = response.headers.get('content-type');
       if (!contentType?.includes('application/json')) {
@@ -87,7 +79,7 @@ export default function Contact() {
       }
 
       const result = await response.json();
-      console.log('API Response:', result);
+
 
       if (!response.ok) {
         throw new Error(result.error || 'Erreur lors de l\'envoi du message');
@@ -102,10 +94,9 @@ export default function Contact() {
       } else {
         throw new Error(result.error || 'Erreur inconnue');
       }
-      
+
     } catch (err: any) {
-      console.error('Erreur lors de l\'envoi:', err);
-      
+
       // Messages d'erreur personnalisés
       if (err.message?.includes("Failed to fetch")) {
         setError("Problème de connexion. Vérifiez votre connexion internet et réessayez.");
@@ -132,7 +123,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Téléphone",
-      value: "+225 01 23 45 67 89",
+      value: "+225 0748290303",
       description: "Appelez-nous pour un conseil immédiat",
       color: "text-blue-600 bg-blue-100",
     },
@@ -159,79 +150,50 @@ export default function Contact() {
     },
   ];
 
-  const reasons = [
-    {
-      icon: MessageSquare,
-      title: "Consultation gratuite",
-      description: "Premier entretien sans engagement",
-    },
-    {
-      icon: Users,
-      title: "Équipe dédiée",
-      description: "Un interlocuteur unique pour votre projet",
-    },
-    {
-      icon: BadgeHelp,
-      title: "Support réactif",
-      description: "Réponse garantie sous 24h",
-    },
-  ];
+
 
   return (
-    <div className="w-full text-white">
+    <div className="w-full text-white text-sm md:text-lg">
       {/* Hero Section */}
       <LightCommunicationBackground
         className="absolute inset-0 -z-10"
-      
+
       >
-        <section className="relative bg-gradient-to-br backdrop-blur-xs from-transparent via-black/50 to-it4a-primary/50 pt-50 p-10" >
-          <div className="max-w-7xl text-center space-y-10 md:space-y-9 mx-auto px-6 md:px-4 lg:px-8">
-        
-                <motion.h1
-                    className="text-4xs md:text-5xl font-bold  text-gray-100 mb-6"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-        
-                  >
-                    <DecryptedText
-                      speed={20}
-                      animateOn="view"
-                      text="Contactez"
-                    />
-                    {' '}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-it4a-primary to-it4a-orange">
-                        <DecryptedText
-                          animateOn="view"
-                          speed={10}
-                          text="Nous"
-                        />
-                    </span>
-                  </motion.h1>
-                  <motion.p
-                    className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                  >
-                      <DecryptedText
-                        speed={100} useOriginalCharsOnly={true}  animateOn='view' 
-                        text="Une question ? Un projet ? Parlons-en ! Notre équipe est là pour vous accompagner dans votre transformation numérique."
-                      />
-                  </motion.p>
-            <div className="grid md:grid-cols-3 md:gap-8 gap-2 mb-16">
-              {reasons.map((reason, index) => (
-                <div key={index} className="text-center">
-                  <div className="h-12 w-12 md:w-16 md:h-16 mx-auto md:mb-4 mb-2 bg-it4a-secondary rounded-full shadow-lg flex items-center justify-center">
-                    <reason.icon className="text-it4a-primary h-6 w-6 md:h-8 md:w-8" />
-                  </div>
-                  <h3 className="text-xs md:text-lg font-Poppins mb-1 md:mb-2 text-transparent bg-clip-text bg-gradient-to-r from-it4a-primary to-it4a-orange">
-                    {reason.title}
-                  </h3>
-                  <p className="text-xs text-gray-30">{reason.description}</p>
-                </div>
-              ))}
-            </div>
+        <section className="relative bg-gradient-to-br backdrop-blur-xs from-transparent via-black/50 to-it4a-primary/50 py-1 pt-20 lg:py-32" >
+          <div className="text-center">
+
+            <motion.h1
+              className="text-4xl pt-20 md:pt-40 lg:text-5xl font-bold text-gray-100 mb-6"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+
+            >
+              <DecryptedText
+                speed={20}
+                animateOn="view"
+                text="Contactez"
+              />
+              {' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-it4a-primary to-it4a-orange">
+                <DecryptedText
+                  animateOn="view"
+                  speed={10}
+                  text="Nous"
+                />
+              </span>
+            </motion.h1>
+            <motion.p
+              className="text-gray-300 max-w-3xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <DecryptedText
+                speed={100} useOriginalCharsOnly={true} animateOn='view'
+                text="Une question ? Un projet ? Parlons-en ! Notre équipe est là pour vous accompagner dans votre transformation numérique."
+              />
+            </motion.p>
           </div>
         </section>
       </LightCommunicationBackground>
@@ -279,13 +241,17 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8">
             {/* Contact Form */}
-            <div>
+            <motion.div
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: .45 }}
+            >
               <div className="bg-white/10 relative border-none shadow-lg h-full">
                 <div className="p-8">
-                  <div className="text-2xs md:text-2xl font-bold mb-2">
+                  <div className="text-xl md:text-2xl font-bold mb-2">
                     Envoyez-nous un message
                   </div>
-                  <p className="text-xs text-gray-100">
+                  <p className=" text-gray-100">
                     Remplissez le formulaire ci-dessous et nous vous
                     recontacterons rapidement.
                   </p>
@@ -302,7 +268,7 @@ export default function Contact() {
                       <GlowButton
                         variant="secondary"
                         onClick={resetForm}
-                        className="w-full text-center justify-center text-white text-xs md:text-lg"
+                        className="w-full text-center justify-center text-white "
                       >
                         Envoyer un autre message
                       </GlowButton>
@@ -321,7 +287,7 @@ export default function Contact() {
                       <div>
                         <label
                           htmlFor="name"
-                          className="block text-sm font-medium text-gray-100 mb-2"
+                          className="block font-medium text-gray-100 mb-2"
                         >
                           Nom complet *
                         </label>
@@ -406,15 +372,19 @@ export default function Contact() {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Contact Information */}
-            <div className="space-y-2 md:space-y-8">
+            <motion.div
+              initial={{ x: 20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: .45 }}
+              className="space-y-2 md:space-y-8">
               <div>
-                <h2 className="text-3xs md:text-3xl font-bold text-white mb-2 md:mb-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 md:mb-4">
                   Nos coordonnées
                 </h2>
-                <p className="text-xs md:text-lg text-gray-300 mb-2">
+                <p className=" text-gray-300 mb-2">
                   Plusieurs moyens de nous contacter selon votre préférence.
                   Nous sommes à votre écoute !
                 </p>
@@ -449,16 +419,20 @@ export default function Contact() {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Map Placeholder */}
-            <div className="border-none bg-white/10 col-span-full shadow-lg">
+            <motion.div
+              initial={{ y: -20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: .45 }}
+              className="border-none bg-white/10 col-span-full shadow-lg">
               <div className="p-6">
-                <h3 className="text-xs md:text-lg font-semibold text-gray-100 mb-4">
+                <h3 className="text-2xl md:text-lg font-semibold text-gray-100 mb-4">
                   Notre localisation
                 </h3>
                 <div className="aspect-video bg-gray-10 rounded-lg flex items-center justify-center">
-                  <iframe 
+                  <iframe
                     title="Google Maps Embed"
                     className="w-full h-full"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.26706606761965!2d-3.925372613786799!3d5.375270130575594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ed4993045de1%3A0x49ef2dc36306f103!2s110%20Rue%20S%C3%A9ville%2C%20Abidjan!5e0!3m2!1sfr!2sci!4v1753206772462!5m2!1sfr!2sci"
@@ -470,59 +444,53 @@ export default function Contact() {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* FAQ Preview */}
-      <section className="py-10 md:py-20 bg-gradient-to-b from-white/30 to-white">
+      <motion.section
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: .45 }}
+        className="py-10 md:py-20 bg-gradient-to-b from-white/30 to-it4a-secondary text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xs lg:text-4xl font-bold text-it4a-secondary mb-2 md:mb-6">
+          <h2 className="text-2xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#f1ca13] to-[#ff7f11] mb-2 md:mb-6">
             Questions fréquentes
           </h2>
           <div className="grid md:grid-cols-2 gap-5 md:gap-8 mt-12">
-            <div className="text-left space-y-2 md:space-y-4">
-              <h3 className="text-2xs md:text-lg font-semibold text-it4a-secondary">
-                Proposez-vous des devis gratuits ?
-              </h3>
-              <p className="text-gray-600">
-                Oui, nous proposons des consultations et devis entièrement
-                gratuits pour évaluer vos besoins et vous proposer la meilleure
-                solution.
-              </p>
-            </div>
             <div className="text-left">
-              <h3 className="text-2xs md:text-lg font-semibold text-it4a-secondary">
+              <h3 className="text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#f1ca13] to-[#ff7f11]">
                 Intervenez-vous dans toute l'Afrique ?
               </h3>
-              <p className="text-gray-600">
+              <p >
                 Basés en Côte d'Ivoire, nous intervenons dans plusieurs pays
                 d'Afrique de l'Ouest et proposons des solutions à distance pour
                 le reste du continent.
               </p>
             </div>
             <div className="text-left">
-              <h3 className="text-2xs md:text-lg font-semibold text-it4a-secondary">
+              <h3 className="text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#f1ca13] to-[#ff7f11]">
                 Quel est votre délai d'intervention ?
               </h3>
-              <p className="text-gray-600">
+              <p >
                 Pour les urgences, nous intervenons sous 24h. Pour les projets
                 planifiés, nous nous adaptons à vos contraintes et délais.
               </p>
             </div>
             <div className="text-left">
-              <h3 className="text-2xs md:text-lg font-semibold text-it4a-secondary">
+              <h3 className="text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#f1ca13] to-[#ff7f11]">
                 Proposez-vous des contrats de maintenance ?
               </h3>
-              <p className="text-gray-600">
+              <p >
                 Oui, nous proposons différents contrats de maintenance adaptés à
                 la taille et aux besoins de votre entreprise.
               </p>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

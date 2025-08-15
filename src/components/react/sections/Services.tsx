@@ -1,5 +1,5 @@
 import { cn } from "../../../lib/utils";
-import { Cloud, Code, Settings, Users, Shield } from 'lucide-react';
+import { Cloud, Code, Settings, Users, Shield, Search, FolderOpen } from 'lucide-react';
 import TriangularBackground from "../UI/Animation/TriangularBackground";
 import TitleDescript from "../UI/components/TitleDescript";
 import TransitionSVGSection from "../UI/components/TransitionSVGSection";
@@ -41,19 +41,29 @@ export const ServicesSection: React.FC<ServicesProps> = (
       icon: <Users className="w-8 h-8" />,
       title: "Support et maintenance IT",
       description: "Assistance technique 24/7 pour garantir la continuité de vos opérations.",
+    },
+    {
+      icon: <Search className="w-8 h-8" />,
+      title: "Étude & Ingénierie",
+      description: "Analyse approfondie et conception technique pour des solutions innovantes et performantes.",
+    },
+    {
+      icon: <FolderOpen className="w-8 h-8" />,
+      title: "Gestion de projets IT",
+      description: "Pilotage et coordination de vos projets technologiques",
     }
   ];
   return (
     <TriangularBackground theme="dark" className="w-full h-full">
-    <section className={` py-10 md:py-20 h-full w-full flex flex-col items-center backdrop-blur-xs px-2  md:px-4  bg-it4a-secondary/50 justify-center scroll-mt-px z-0 ${className} `}>
-      <TransitionSVGSection/>
-      <TitleDescript title="Nos services IT sur mesure" descript="Des solutions complètes pour accompagner votre transformation numérique" />
-      <div className={` container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto `}>
-        {services.map((services, index) => (
-          <Services key={services.title} {...services} index={index} />
-        ))}
-      </div>
-    </section>
+      <section className={` py-10 md:py-20 h-full w-full flex flex-col items-center backdrop-blur-xs px-2  md:px-4  bg-it4a-secondary/50 justify-center scroll-mt-px z-0 ${className} `}>
+        <TransitionSVGSection />
+        <TitleDescript title="Nos services IT sur mesure" descript="Des solutions complètes pour accompagner votre transformation numérique" />
+        <div className={` container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto `}>
+          {services.map((services, index) => (
+            <Services key={services.title} {...services} index={index} />
+          ))}
+        </div>
+      </section>
     </TriangularBackground>
   );
 }

@@ -24,6 +24,7 @@ import ImgDevServices from "/image/services/Gemini_Generated_Image_gxayblgxayblg
 import { BackgroundBeams } from "@/components/uiAceternity/UI/Background/BackgroundBeams";
 import TitleDescript from "@/components/react/UI/components/TitleDescript";
 import {ServicesComplementaire} from "@/components/uiAceternity/UI/componentlist";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -120,13 +121,17 @@ const services = [
       client:load
     >
       <section
-        class="relative bg-gradient-to-br backdrop-blur-xs from-transparent via-black/50 to-it4a-primary/50 py-1 pt-20 lg:py-32"
+        class="relative bg-gradient-to-br backdrop-blur-xs from-transparent via-black/50 to-it4a-primary/50 py-1 pt-20 lg:py-32 text-sm md:text-lg"
       >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-16">
-            <h1
-              class="text-4xs pt-20 md:pt-40 lg:text-5xl font-bold text-gray-100 mb-6"
-            >
+          <div class="text-center ">
+             <motion.h1
+                    className="text-3xl md:text-5xl pt-20 md:pt-40 lg:text-5xl font-bold text-gray-100 mb-6"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+        
+                  client:only>
               <DecryptedText
                 speed={20}
                 animateOn="view"
@@ -143,16 +148,20 @@ const services = [
                   client:load
                 />
               </span>
-            </h1>
-            <p
-              class="text-xs md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            </motion.h1>
+            <motion.p
+                    className="text-xs md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    client:only
             >
               <DecryptedText
                 speed={100} useOriginalCharsOnly={true}    animateOn='view' 
                 text="Des solutions complètes pour transformer et optimiser votre infrastructure informatique"
                 client:load
               />
-            </p>
+            </motion.p>
           </div>
         </div>
       </section>
@@ -247,23 +256,23 @@ const services = [
       <section
         class="py-20 backdrop-blur-xs bg-gradient-to-r from-it4a-primary/50 via-it4a-secondary/90 to-it4a-secondary"
       >
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col gap-5 ">
           <TitleDescript title="Besoin d'une solution IT?" descript="NOs Experts analysent vos besions et vours proposent la solution la plus adaptée à votre activité et votre budget." client:load/>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <GlowButton
               href="/contact"
-              className="flex items-center text-white"
+              className="text-center text-white"
               variant="outline"
             >
-              Demander un devis gratuit
+              Contactez Nous
               <ArrowRight />
             </GlowButton>
             <GlowButton
               href="/about"
-              className="flex items-center text-white"
+              className=" text-center text-white"
               variant="primary"
             >
-              Découvrir notre équipe
+              En Savoir Plus
             </GlowButton>
           </div>
         </div>

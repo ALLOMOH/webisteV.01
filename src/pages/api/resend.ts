@@ -4,6 +4,8 @@ import { Resend } from 'resend';
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
+resend.domains.create({name:'itexperts4africa.com',customReturnPath:'outbound'});
+
 export async function POST({ request }:any) {
   try {
     // Récupération des données du formulaire
@@ -39,12 +41,9 @@ export async function POST({ request }:any) {
     // Corps de l'email formaté
     const emailBody = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #1e40af; border-bottom: 2px solid #f1ca13; padding-bottom: 10px;">
+        <h2 style="color:#f1ca13; border-bottom: 2px solid #f1ca13; padding-bottom: 10px;">
           NOUVEAU MESSAGE DE CONTACT - ITExperts4Africa
         </h2>
-        <span style="display: inline-block; background-color: #1d3446; padding: 10px; border-radius: 35px; ">
-          <img src="https://res.cloudinary.com/dubml0h6l/image/upload/v1753807851/WhiteLogo_e5osvu.png" width="50" height="50" style="object-fit:cove  aspect-radio:1/2" alt="ite4a"/>
-        </span>
         
         <div style="background-color: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px;">
           <p><strong>De:</strong> ${name}</p>
@@ -75,13 +74,12 @@ export async function POST({ request }:any) {
     // Envoi de l'email via Resend
     const { data, error } = await resend.emails.send({
       from: 'ITExperts4Africa <onboarding@resend.dev>', // Remplacez par votre domaine vérifié
-      to: ['delivered@resend.dev'], // Remplacez par votre vraie adresse
+      to: ['contact@itexperts4africa.com'], // Remplacez par votre vraie adresse
       subject: `[ITExperts4Africa] Nouveau message de contact de ${name}`,
       html: emailBody,
     });
 
     if (error) {
-      console.error('Erreur Resend:', error);
       return new Response(JSON.stringify({
         success: false,
         error: 'Erreur lors de l\'envoi de l\'email. Veuillez réessayer.'
@@ -93,8 +91,6 @@ export async function POST({ request }:any) {
       });
     }
 
-    // Log de succès (optionnel)
-    console.log('Email envoyé avec succès:', data);
 
     return new Response(JSON.stringify({
       success: true,
@@ -108,7 +104,6 @@ export async function POST({ request }:any) {
     });
 
   } catch (error) {
-    console.error('Erreur serveur:', error);
     return new Response(JSON.stringify({
       success: false,
       error: 'Erreur interne du serveur. Veuillez réessayer plus tard.'

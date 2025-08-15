@@ -28,10 +28,10 @@ function CtaSection() {
             <TitleDescript className={``} title="Transformer votre infrastructure IT ?" descript={`Contactez nos experts dès aujourd'hui pour une consultation gratuite et découvrez comment nous pouvons optimiser vos systèmes.`}/>   
             <div className="flex flex-col sm:flex-row gap-2 md:gap-4 justify-center">
               <GlowButton href="/contact" variant="primary" className="text-xs text-center md:text-lg">
-                Consultation gratuite
+                Contactez nous
               </GlowButton>
               <GlowButton  href="/about" variant="outline" className="text-xs md:text-lg">
-                Voir nos projets
+                En savoir plus 
               </GlowButton>
             </div>
           </div>
