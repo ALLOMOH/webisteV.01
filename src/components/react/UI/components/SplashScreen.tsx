@@ -94,7 +94,7 @@ const SplashScreen = ({ onComplete=true }:any) => {
         </svg>
       </div>
 
-      <div className="relative z-10 text-center px-8">
+      <div className="relative z-10 text-center px-4">
         {/* Logo Container */}
         <div className="mb-8 relative">
           <div className="w-32 h-32 mx-auto mb-6 relative">
@@ -125,7 +125,7 @@ const SplashScreen = ({ onComplete=true }:any) => {
         </div>
 
         {/* Progress Bar */}
-        <div className="w-80 max-w-full mx-auto">
+        <div className="w-80 px-20  mx-auto">
           <div className="flex justify-between text-sm text-gray-400 mb-2">
             <span>Chargement</span>
             <span>{Math.round(progress)}%</span>
