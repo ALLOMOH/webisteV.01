@@ -31,7 +31,7 @@ function CtaSection() {
                 Contactez nous
               </GlowButton>
               <GlowButton  href="/about" variant="outline" className="text-xs md:text-lg">
-                En savoir plus 
+                En Savoir Plus 
               </GlowButton>
             </div>
           </div>

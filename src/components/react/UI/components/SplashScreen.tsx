@@ -52,8 +52,8 @@ const SplashScreen = ({ onComplete=true }:any) => {
 
   return (
     <div 
-      className={`fixed inset-0 z-500 flex items-center justify-center bg-gradient-to-br from-it4a-primary\ via-black to-it4a-secondary transition-opacity duration-500 ${
-        isVisible ? 'opacity-100' : 'opacity-0'
+      className={`fixed inset-0 z-1000 flex items-center justify-center bg-gradient-to-br from-it4a-primary\ via-black to-it4a-secondary transition-all duration-1000 ease-int-out ${
+        isVisible ? 'opacity-100' : 'opacity-0 hidden'
       }`}
     >
       {/* Animated Network Background */}

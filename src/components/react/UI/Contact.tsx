@@ -159,7 +159,7 @@ export default function Contact() {
         className="absolute inset-0 -z-10"
 
       >
-        <section className="relative bg-gradient-to-br backdrop-blur-xs from-transparent via-black/50 to-it4a-primary/50 py-1 pt-20 lg:py-32" >
+        <section className="relative bg-gradient-to-br backdrop-blur-xs from-transparent via-black/50 to-it4a-primary/50 py-10 pt-20 lg:py-32" >
           <div className="text-center">
 
             <motion.h1
