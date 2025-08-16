@@ -36,7 +36,7 @@ const Hero = () => {
       <div className={`max-w-7xl grid lg:grid-cols-2 lg:gap-5 items-center relative z-10 `}>
         <div >
           <div >
-            <h1 className="text-4xl font-bold md:text-4xl xl:text-4xl lg:text-3xl text-white leading-tight">
+            <h1 className=" text-4xl font-bold md:text-6xl  xxl:text-7xl text-white leading-tight">
               <DecryptedText speed={70}    animateOn='view'  text={`IT Experts`} />
               <span className="block font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#f1ca13] to-[#ff7f11]">
                 <DecryptedText speed={70}   animateOn='view' text={`4 Africa`} />
