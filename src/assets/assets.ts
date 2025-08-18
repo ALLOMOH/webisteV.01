@@ -7,7 +7,9 @@ import HiPERDISTLogo from   '/image/partenaryReferenceLogo/HIPERDIST.webp?url';
 import OrangeCiLogo from '/image/partenaryReferenceLogo/OrangeCi.webp?url';
 import MtnLogo from '/image/partenaryReferenceLogo/MTNLogo.webp?url';
 import Asarel from '/image/partenaryReferenceLogo/logo_asarel.webp?url';
-import MUGEFCI from '/image/partenaryReferenceLogo/logo_mugefci.webp?url' // Example of a partner logo
+import MUGEFCI from '/image/partenaryReferenceLogo/logo_mugefci.webp?url';
+
+// Example of a partner logo
 
 //IT4A
 
