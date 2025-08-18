@@ -69,7 +69,7 @@ type LightCommunicationBackgroundProps = {
 };
 
 const LightCommunicationBackground: React.FC<LightCommunicationBackgroundProps> = ({
-  theme = 'auto',
+  theme = 'dark',
   pointCount = 120,
   showParticles = true,
   parallaxIntensity = 0.4,

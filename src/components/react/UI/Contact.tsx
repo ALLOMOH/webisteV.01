@@ -156,6 +156,7 @@ export default function Contact() {
     <div className="w-full text-white text-sm md:text-lg">
       {/* Hero Section */}
       <LightCommunicationBackground
+        
         className="absolute inset-0 -z-10"
       >
         <section className="relative bg-gradient-to-br backdrop-blur-xs from-transparent via-black/50 to-it4a-primary/50 py-10 pt-20 lg:py-32" >
