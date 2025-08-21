@@ -103,7 +103,7 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <header 
       ref={headerRef}
-      className={` ${className}  sticky top-0 z-150 w-full transition-all duration-200 dark:bg-none 
+      className={` ${className}  fixed top-0 z-150 w-full transition-all duration-200 dark:bg-none 
       ${isScrolled ? 'p-5 ' : ' bg-gradient-to-r from-it4a-secondary to-it4a-primary/15  transition-all .1s '}
       `}
     >
