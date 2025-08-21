@@ -9,8 +9,7 @@ import Analytics from "@vercel/analytics/astro";
 import ScrollArrow from "@/components/react/UI/components/ScrollArrow";
 import SplashScreen from "@/components/react/UI/components/SplashScreen";
 import { ClientRouter } from "astro:transitions";
-import type { transformer } from "astro:schema";
-import type { animate } from "@tsparticles/engine";
+
 
 export interface Props {
   title?: string;
@@ -63,15 +62,11 @@ const {
     <ClientRouter />
     <link rel="manifest" href="/favicon/faviconLight/site.webmanifest" />
     <title title="ITEXPERE4AFICA">{title}</title>
-
   </head>
 
   <body
     class="bg-gradient-to-b from-it4a-secondary via-neutral-800 to-it4a-primary/80 box-border font-Poppins"
   >
-
-   
-
     <AnimatedNetworkBackground className="-z-200" client:only />
     <Header
       client:load
@@ -84,35 +79,35 @@ const {
         },
         {
           label: "Services",
-          href: "#",
+          href: "#services",
           subItems: [
             {
               label: "Conseil et stratégie IT",
-              href: "/services",
+              href: "/services/conseil-strategie-it",
             },
             {
               label: "Réseaux et cybersécurité",
-              href: "/services",
+              href: "/services/reseaux-cybersecurite",
             },
             {
               label: "Solutions cloud et hébergement",
-              href: "/services",
+              href: "/services/cloud-hebergement",
             },
             {
               label: "Développement et intégration",
-              href: "/services",
+              href: "/services/developpement-integration",
             },
             {
               label: "Support et maintenance IT",
-              href: "/services",
+              href: "/services/support-maintenance",
             },
             {
               label: "Étude & Ingénierie",
-              href: "/services",
+              href: "/services/etude-ingenierie",
             },
             {
               label: "Gestion de projets IT",
-              href: "/services",
+              href: "/services/gestion-projets",
             },
           ],
         },
@@ -130,13 +125,13 @@ const {
     <main class="snap-mandatory flex items-center flex-col justify-center">
       <TracingBeam client:only>
         <ScrollArrow client:only />
-        <slot transition:name="root" transition:animate="initial"/>
+        <slot transition:name="root" transition:animate="initial" />
       </TracingBeam>
     </main>
     <Footer bgGradient="bg-transparent backdrop-blur-xs" client:load />
     <Analytics client:only />
 
-      <!-- SplashScreen Component -->
-    <SplashScreen client:only  transformer:animate="fade"/>
+    <!-- SplashScreen Component -->
+    <SplashScreen client:only transformer:animate="fade" />
   </body>
 </html>

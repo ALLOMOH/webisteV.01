@@ -103,8 +103,8 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <header 
       ref={headerRef}
-      className={` ${className}  fixed top-0 z-150 w-full transition-all duration-200 dark:bg-none 
-      ${isScrolled ? ' p-5 ' : 'bg-gradient-to-r from-it4a-secondary to-it4a-primary/15  transition-all .2s '}
+      className={` ${className}  sticky top-0 z-150 w-full transition-all duration-200 dark:bg-none 
+      ${isScrolled ? 'p-5 ' : ' bg-gradient-to-r from-it4a-secondary to-it4a-primary/15  transition-all .1s '}
       `}
     >
       {/* Bannière promotionnelle avec animation de disparition */}
@@ -257,12 +257,11 @@ const Header: React.FC<HeaderProps> = ({
                   {navItems.map((item) => (
                     <li key={item.label} className="border-b border-it4a-primary/40 acitve:border-it4a-primary ">
                       <a
-                        href={item.href}
+                        href={!item.subItems ? item.href : '#'}
                         onClick={() => {
                           if (item.subItems) {
                             setActiveSubMenu(activeSubMenu === item.label ? null : item.label);
                           } 
-                        
                         }}
                         className="w-full text-left text-white py-3 px-2 flex justify-between items-center  font-Poppins active:text-it4a-primary transition-colors .5s"
                       >

@@ -60,14 +60,36 @@ const Footer: React.FC<FooterProps> = ({
       title: "Services",
 
       links: [
-        { label: "Conseil et stratégie IT", href: "/services" },
-        { label: "Réseaux et cybersécurité", href: "/services" },
-        { label: "Solutions cloud et hébergement", href: "/services" },
-        { label: "Développement et intégration", href: "/services" },
-        { label: "Support et maintenance IT", href: "/services" },
-        { label: "Étude & Ingénierie", href: "/services" },
-        { label: "Gestion de projets IT", href: "/services" },
+        {
+          label: "Conseil et stratégie IT",
+          href: "/services/conseil-strategie-it",
+        },
+        {
+          label: "Réseaux et cybersécurité",
+          href: "/services/reseaux-cybersecurite",
+        },
+        {
+          label: "Solutions cloud et hébergement",
+          href: "/services/cloud-hebergement",
+        },
+        {
+          label: "Développement et intégration",
+          href: "/services/developpement-integration",
+        },
+        {
+          label: "Support et maintenance IT",
+          href: "/services/support-maintenance",
+        },
+        {
+          label: "Étude & Ingénierie",
+          href: "/services/etude-ingenierie",
+        },
+        {
+          label: "Gestion de projets IT",
+          href: "/services/gestion-projets",
+        },
       ]
+
     },
     {
       title: "Légal",
