@@ -174,7 +174,7 @@ const Header: React.FC<HeaderProps> = ({
                   <motion.ul
                     initial={{ opacity: 0, y: 0}}
                     animate={{opacity:1, y:40}}
-                    className={`absolute backdrop-blur-2xl  top-0 left-0 mt-0 w-48 text-white  outline-white  border-l border-l-it4a-primary shadow-it4a-primary rounded-md py-2 z-30  ${isScrolled && `bg-it4a-secondary/60 backdrop-blur-xs` } `}
+                    className={`absolute backdrop-blur-2xl  top-0 left-0 mt-0 w-48 md:w-md text-white  outline-white  border-l border-l-it4a-primary shadow-it4a-primary rounded-md py-2 z-30  ${isScrolled && `bg-it4a-secondary/60 backdrop-blur-xs` } `}
                   >
                     {item.subItems.map((subItem) => (
                       <motion.li

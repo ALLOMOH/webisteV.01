@@ -9,13 +9,10 @@ import Analytics from "@vercel/analytics/astro";
 import ScrollArrow from "@/components/react/UI/components/ScrollArrow";
 import SplashScreen from "@/components/react/UI/components/SplashScreen";
 import { ClientRouter } from "astro:transitions";
-
-
 export interface Props {
   title?: string;
   description?: string;
 }
-
 const {
   title = "ITEXPERE4AFICA",
   description = "IT Experts 4 Africa Solutions technologiques avancées",
@@ -79,8 +76,12 @@ const {
         },
         {
           label: "Services",
-          href: "#services",
+          href: "#",
           subItems: [
+            {
+              label:"Tous les services",
+              href:"/services",
+            },
             {
               label: "Conseil et stratégie IT",
               href: "/services/conseil-strategie-it",

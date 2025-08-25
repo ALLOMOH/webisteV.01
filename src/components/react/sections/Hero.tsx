@@ -34,7 +34,7 @@ const Hero = () => {
       />
 
       <div className={`max-w-7xl grid lg:grid-cols-2 lg:gap-5 items-center relative z-10 `}>
-        <div >
+        <div className={`space-y-4`} >
           <div >
             <h1 className=" text-4xl font-bold md:text-6xl  xxl:text-7xl text-white leading-tight">
               <DecryptedText speed={70}    animateOn='view'  text={`IT Experts`} />
@@ -62,7 +62,7 @@ const Hero = () => {
              </FloatingCard>
           </div>
 
-          <div className="grid grid-cols-3 gap-8 pt-8 border-t border-[#f1ca13]/20">
+          <div className="grid grid-cols-3 gap-8 pt-8 border-t border-it4a-primary/30">
             <div className="text-center">
               <div className="text-3xs md:text-3xl lg:text-4xl font-black text-[#f1ca13]">
                 {/* <CountUpAnimation end={10} suffix="+" /> */}
